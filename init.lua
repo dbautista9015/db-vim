@@ -1,3 +1,5 @@
+require("config.lazy")
+--
 -- Keymaps for executing Lua by line or by the file
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
