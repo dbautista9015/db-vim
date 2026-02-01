@@ -14,8 +14,8 @@ vim.keymap.set("n", "<C-U>", "<C-U>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- Go to netrw
-vim.keymap.set("n", "<space>pv", "<cmd>Ex<CR>")
+-- Go to oil
+vim.keymap.set("n", "<space>pv", "<cmd>Oil<CR>")
 
 -- Share system clipboard
 vim.opt.clipboard = "unnamedplus"
