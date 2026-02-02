@@ -42,6 +42,12 @@ vim.opt.colorcolumn = "80"
 -- Save undo information in a file
 vim.opt.undofile = true
 
+-- Enables 24-bit RGB color in the TUI
+vim.opt.termguicolors = true
+
+-- When and how to display the sign column
+vim.opt.signcolumn = "yes"
+
 -- Highlight when yanking (copying) text
 -- Try it with `yap` in normal mode
 -- See `:help vim.highlight.on_yank()`
