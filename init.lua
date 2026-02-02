@@ -1,5 +1,4 @@
 require("config.lazy")
---
 -- Keymaps for executing Lua by line or by the file
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
@@ -16,6 +15,15 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- Go to oil
 vim.keymap.set("n", "<space>pv", "<cmd>Oil<CR>")
+
+-- Open diagnostic quick fix list.
+-- Can also execute this command with :lua vim.diagnostic.setloclist 
+vim.keymap.set(
+  'n',
+  '<leader>q',
+  vim.diagnostic.setloclist,
+  { desc = 'Open diagnostic [Q]uickfix list' }
+)
 
 -- Share system clipboard
 vim.opt.clipboard = "unnamedplus"
@@ -47,6 +55,18 @@ vim.opt.termguicolors = true
 
 -- When and how to display the sign column
 vim.opt.signcolumn = "yes"
+
+vim.diagnostic.config {
+  update_in_insert = false,
+  severity_sort = true,
+  float = { border = 'rounded', source = "if_many"},
+  underline = { severity = vim.diagnostic.severity.ERROR },
+
+  virtual_text = true,
+  virtual_lines = false,
+
+  jump = { float = true }
+}
 
 -- Highlight when yanking (copying) text
 -- Try it with `yap` in normal mode
