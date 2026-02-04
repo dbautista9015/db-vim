@@ -17,7 +17,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<space>pv", "<cmd>Oil<CR>")
 
 -- Open diagnostic quick fix list.
--- Can also execute this command with :lua vim.diagnostic.setloclist 
+-- Can also execute this command with :lua vim.diagnostic.setloclist
 vim.keymap.set(
   'n',
   '<leader>q',
@@ -59,7 +59,7 @@ vim.opt.signcolumn = "yes"
 vim.diagnostic.config {
   update_in_insert = false,
   severity_sort = true,
-  float = { border = 'rounded', source = "if_many"},
+  float = { border = 'rounded', source = "if_many" },
   underline = { severity = vim.diagnostic.severity.ERROR },
 
   virtual_text = true,
@@ -72,10 +72,9 @@ vim.diagnostic.config {
 -- Try it with `yap` in normal mode
 -- See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
-    desc = 'Highlight when yanking (copying) text',
-    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-    callback = function()
-	vim.highlight.on_yank()
-    end,
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
-
