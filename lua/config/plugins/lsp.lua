@@ -16,7 +16,11 @@ return {
       },
     },
     config = function()
-      require("lspconfig").lua_ls.setup {}
+      -- Depricated way
+      -- require("lspconfig").lua_ls.setup {}
+
+      -- New Way since Nvim 0.11.3
+      vim.lsp.enable('lua_ls')
 
       -- Autocommand for formatting when file is saved
       vim.api.nvim_create_autocmd('LspAttach', {
