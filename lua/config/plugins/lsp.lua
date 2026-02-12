@@ -2,6 +2,7 @@ return {
   {
     "https://github.com/neovim/nvim-lspconfig.git",
     dependencies = {
+      { 'saghen/blink.cmp' },
       {
         -- Plugin to make setting up lus lsp easier
         "folke/lazydev.nvim",
@@ -20,7 +21,7 @@ return {
       -- require("lspconfig").lua_ls.setup {}
 
       -- New Way since Nvim 0.11.3
-      vim.lsp.enable('lua_ls')
+      vim.lsp.enable({ 'lua_ls', 'pyrefly' })
 
       -- Autocommand for formatting when file is saved
       vim.api.nvim_create_autocmd('LspAttach', {
